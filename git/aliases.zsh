@@ -16,6 +16,7 @@ alias gca='git commit -a'
 alias gco='git checkout'
 #alias gb='git branch'
 alias gb='git branch | cut -c 3- | fzf --multi --preview="git log {} --"'
+alias gbc='git branch | cut -c 3- | fzf --multi --preview="git log {} --" | xargs git checkout'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias grm="git status | grep deleted | awk '{print \$2}' | xargs git rm"
 
