@@ -1,0 +1,4 @@
+function lpy() {
+  eval "$(pyenv init -)";
+  eval "$(pyenv virtualenv-init -)";
+}
