@@ -213,7 +213,7 @@ mode "$mode_system" {
 bindsym $mod+x mode "$mode_system"
 
 # sudo apt install xautolock
-exec xautolock -time 5 -locker i3lock-fancy
+exec xautolock -corners 0-000 -time 5 -locker i3lock-fancy
 
 bindsym Ctrl+Shift+Up  exec pactl set-sink-volume 0 +5% #increase sound volume
 bindsym Ctrl+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volume
