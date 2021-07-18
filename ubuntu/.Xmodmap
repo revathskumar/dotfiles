@@ -3,7 +3,7 @@ clear control
 keycode 66 = Control_L
 add control = Control_L Control_R
 
-!remove lock = Caps_Lock
+!add lock = Caps_Lock
 !keysym lock = control
 
 !clear mod1
