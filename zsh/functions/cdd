@@ -1,0 +1,11 @@
+function cdd() { 
+  cd $1;
+  echo $PWD/package.json;
+  if [ -e $PWD/package.json ]
+  then
+      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh";
+      echo "ok load nvm";
+  else
+      echo "nok"
+  fi
+}
