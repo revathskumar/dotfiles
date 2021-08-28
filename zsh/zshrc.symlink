@@ -29,7 +29,7 @@
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search)
+plugins=(history-substring-search)
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -52,6 +52,7 @@ done
 unset config_file
 
 source $DOTFILES/git/completion.zsh
+source $DOTFILES/git/aliases.zsh
 #source $DOTFILES/redis/aliases.zsh
 source $DOTFILES/ruby/aliases.zsh
 source $DOTFILES/system/aliases.zsh
@@ -64,7 +65,7 @@ source $DOTFILES/zsh/config.zsh
 #source $DOTFILES/zsh/fpath.zsh
 #source $DOTFILES/zsh/prompt.zsh
 source $DOTFILES/zsh/z.zsh
-
+source $DOTFILES/zsh/fzf.zsh
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -74,8 +75,8 @@ then
 fi
 
 # initialize autocomplete here, otherwise functions won't be loaded
-# autoload -U compinit
-# compinit
+autoload -U compinit
+compinit
 
 # load every completion after autocomplete loads
 # for config_file ($DOTFILES/zsh/completion.zsh) source $config_file
@@ -86,7 +87,6 @@ ZSH_THEME="rsk"
 
 source $ZSH/oh-my-zsh.sh
 
-source $DOTFILES/git/aliases.zsh
 export NVM_DIR="$HOME/.nvm"
 export PATH="$NVM_DIR:$PATH"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
