@@ -1,3 +1,5 @@
+#compdef git gco 
+
 # Use `hub` as our git wrapper:
 #   http://defunkt.github.com/hub/
 hub_path=$(which hub)
@@ -5,6 +7,27 @@ if [[ -f $hub_path ]]
 then
   alias git=$hub_path
 fi
+
+# The name of the current branch
+# Back-compatibility wrapper for when this function was defined here in
+# the plugin, before being pulled in to core lib/git.zsh as git_current_branch()
+# to fix the core -> git plugin dependency.
+function current_branch() {
+  git_current_branch
+}
+
+# Check if main exists and use instead of master
+function git_main_branch() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local branch
+  for branch in main trunk; do
+    if command git show-ref -q --verify refs/heads/$branch; then
+      echo $branch
+      return
+    fi
+  done
+  echo master
+}
 
 # The rest of my fun git aliases
 alias gl='git pull --prune'
@@ -16,10 +39,14 @@ alias gca='git commit -a'
 alias gco='git checkout'
 #alias gb='git branch'
 alias gb='git branch | cut -c 3- | fzf --multi --preview="git log {} --"'
-alias gbc='git branch | cut -c 3- | fzf --multi --preview="git log {} --" | xargs git checkout'
+alias gbc='git branch | cut -c 3- | fzf --preview="git log {} --" | xargs git checkout'
+compdef _git gdv=git-branch
+
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias grm="git status | grep deleted | awk '{print \$2}' | xargs git rm"
-
+alias gcm='git checkout $(git_main_branch)'
+alias ggpull='git pull origin "$(git_current_branch)"'
+alias ggpush='git push origin "$(git_current_branch)"'
 # Fetch a pull request from github to a branch
 # @param pull request id
 # @param new branch name
