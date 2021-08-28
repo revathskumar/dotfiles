@@ -1,0 +1,1 @@
+/home/revath/code/ondir/scripts.zsh
