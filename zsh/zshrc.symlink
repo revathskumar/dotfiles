@@ -129,6 +129,7 @@ export LC_ALL="en_US.UTF-8"
 PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 
+eval "$(direnv hook zsh)"
 
 # added by travis gem
 #if [[ -a /home/revath/ ]]
