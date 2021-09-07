@@ -41,12 +41,16 @@ alias gco='git checkout'
 alias gb='git branch | cut -c 3- | fzf --multi --preview="git log {} --"'
 alias gbc='git branch | cut -c 3- | fzf --preview="git log {} --" | xargs git checkout'
 compdef _git gdv=git-branch
+compdef _git gco=git-branch
 
+alias gst='git status'
+alias ga='git add'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias grm="git status | grep deleted | awk '{print \$2}' | xargs git rm"
 alias gcm='git checkout $(git_main_branch)'
 alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
+alias gprc='hub pull-request -b $(git_main_branch) -h $(git_current_branch) -f < .github/pull_request_template.md'
 # Fetch a pull request from github to a branch
 # @param pull request id
 # @param new branch name
