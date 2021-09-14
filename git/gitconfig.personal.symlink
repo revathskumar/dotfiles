@@ -38,3 +38,5 @@
 	helper = /home/revath/code/git-cinnabar/git-cinnabar-helper
 [pager]
 	branch = false
+[init]
+	defaultBranch = main
