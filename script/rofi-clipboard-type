@@ -1,0 +1,11 @@
+#!/bin/sh
+CURRENT_WINDOW=$(xdotool getactivewindow);
+ROFI_OUT=$(/usr/local/bin/rofi -modi "clipboard:$HOME/bin/greenclip print" -show clipboard -run-command '{cmd}');
+sleep 0.5; 
+
+# Capture the selection
+TEXT="$( xclip -o -selection clipboard )"
+
+xdotool windowactivate $CURRENT_WINDOW;
+xdotool type "$TEXT"
+#xdotool key Ctrl+v

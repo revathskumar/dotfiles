@@ -1,0 +1,11 @@
+#!/bin/bash
+
+formatTime () {
+	d=$(TZ="$1" date +"%d-%m-%Y")
+	TIME="$(TZ="$1" date +"%I:%M %p")"
+	echo "$1\n$d\n$TIME"
+}
+
+options="$(formatTime "US/Pacific")_$(formatTime UTC)_$(formatTime "Asia/Kolkata")"
+
+echo -e "$options"| rofi -p "$(TZ="Asia/Kolkata" date +"%I:%M %p")" -dmenu -theme "~/.config/rofi/theme.rasi" -sep "_" -selected-row 1
