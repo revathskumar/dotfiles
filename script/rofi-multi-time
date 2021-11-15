@@ -9,6 +9,8 @@ formatTime () {
 actions=(
 	-kb-custom-1 "KP_Add"
 	-kb-custom-2 "KP_Subtract"
+	-kb-custom-3 "plus"
+	-kb-custom-4 "minus"
 )
 
 
@@ -21,8 +23,8 @@ while true; do
 	reponse=$?
 
 	case "$reponse" in
-	    10) echo "10";hours=`expr $hours + 1`;;
-	    11) echo "11";hours=`expr $hours - 1`;;
+	    10|12) hours=`expr $hours + 1`;;
+	    11|13) hours=`expr $hours - 1`;;
 	    *) echo "exit"; exit "$?";;
 	esac
 done
