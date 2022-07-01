@@ -39,6 +39,10 @@ map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 
+nnoremap <C-L> :tabprevious<CR>
+nnoremap <C-R> :tabnext<CR>
+
+
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
 
