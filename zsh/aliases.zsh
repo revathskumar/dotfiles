@@ -24,3 +24,4 @@ alias gbd="delete-branches"
 alias ccp="xclip -sel clip"
 alias t="~/bin/todo/todo.sh"
 alias lg=lazygit
+alias ls=lsd
