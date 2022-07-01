@@ -1,4 +1,4 @@
-#compdef git gco 
+##compdef git gco 
 
 # Use `hub` as our git wrapper:
 #   http://defunkt.github.com/hub/
@@ -40,8 +40,8 @@ alias gco='git checkout'
 #alias gb='git branch'
 alias gb='git branch | cut -c 3- | fzf --multi --preview="git log {} --"'
 alias gbc='git branch | cut -c 3- | fzf --preview="git log {} --" | xargs git checkout'
-compdef _git gdv=git-branch
-compdef _git gco=git-branch
+#compdef _git gdv=git-branch
+#compdef _git gco=git-branch
 
 alias gst='git status'
 alias ga='git add'
