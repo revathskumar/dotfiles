@@ -1,5 +1,6 @@
 {
   "workbench.colorTheme": "Default Dark+",
   "editor.guides.bracketPairs": true,
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "git.autofetch": true
 }
