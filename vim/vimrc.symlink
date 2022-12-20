@@ -168,16 +168,17 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'elixir-lang/vim-elixir'
+" Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-obsession'
 
 " JavaScript
 Plugin 'scrooloose/syntastic'
 
 " Snipmate and dependencies
+let g:snipMate = { 'snippet_version' : 1 }
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'garbas/vim-snipmate'
 
 
 " All of your Plugins must be added before the following line
