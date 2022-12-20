@@ -2,11 +2,11 @@
 
 # Use `hub` as our git wrapper:
 #   http://defunkt.github.com/hub/
-hub_path=$(which hub)
-if [[ -f $hub_path ]]
-then
-  alias git=$hub_path
-fi
+# hub_path=$(which gh)
+# if [[ -f $hub_path ]]
+# then
+#  alias git=$hub_path
+# fi
 
 # The name of the current branch
 # Back-compatibility wrapper for when this function was defined here in
