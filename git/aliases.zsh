@@ -53,6 +53,9 @@ alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
 alias gprc='hub pull-request -b $(git_main_branch) -h $(git_current_branch) -f < .github/pull_request_template.md'
 alias grv='git remote -v'
+alias gr='git restore'
+alias grs='git restore --staged'
+alias gssp='git stash show -p'
 # Fetch a pull request from github to a branch
 # @param pull request id
 # @param new branch name
