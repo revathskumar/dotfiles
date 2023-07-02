@@ -158,6 +158,8 @@ eval "$(direnv hook zsh)"
 # The next line enables shell command completion for gcloud.
 #if [ -f '/home/revath/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/revath/google-cloud-sdk/completion.zsh.inc'; fi
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # from /opt/homebrew/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
