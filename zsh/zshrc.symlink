@@ -129,6 +129,9 @@ export STORYBOOK_ZEPLIN_TOKEN=$(pass show Token/Zeplin)
 #source /home/revath/.cargo/env
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source $DOTFILES/zsh/brew.zsh
+# to sytax highlight man pages depends on bat
+# moreinfo: https://github.com/sharkdp/bat#man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
