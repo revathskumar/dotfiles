@@ -172,6 +172,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # added by travis gem
 [ ! -s $HOME/.travis/travis.sh ] || source $HOME/.travis/travis.sh
 
+test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh)
+
 # from /opt/homebrew/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
