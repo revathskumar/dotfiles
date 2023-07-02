@@ -177,3 +177,4 @@ test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh)
 # from /opt/homebrew/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f "/Users/revath.kumar/.ghcup/env" ] && source "/Users/revath.kumar/.ghcup/env" # ghcup-env
