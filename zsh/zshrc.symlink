@@ -89,13 +89,13 @@ ZSH_THEME="rsk"
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
-if [ -d "$HOME/HDD2/Home/.nvm" ]; then
-  export NVM_DIR="$HOME/HDD2/Home/.nvm"
-fi
+#if [ -d "$HOME/HDD2/Home/.nvm" ]; then
+#  export NVM_DIR="$HOME/HDD2/Home/.nvm"
+#fi
 
 export PATH="$NVM_DIR:$PATH"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-#[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+# [ -r $NVM_DIR/bash_completion ] && . $NVM_DIR/bash_completion
 #eval "$(gulp --completion=zsh)"
 
 bindkey '^[[A' history-substring-search-up

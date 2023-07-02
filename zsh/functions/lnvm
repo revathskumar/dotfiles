@@ -1,3 +1,5 @@
 function lnvm() { 
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    source $DOTFILES/zsh/nvm.zsh
+    source $DOTFILES/zsh/nvm_completion
 }
