@@ -129,6 +129,7 @@ export STORYBOOK_ZEPLIN_TOKEN=$(pass show Token/Zeplin)
 #source /home/revath/.cargo/env
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source $DOTFILES/zsh/brew.zsh
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 # to sytax highlight man pages depends on bat
 # moreinfo: https://github.com/sharkdp/bat#man
