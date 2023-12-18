@@ -6,12 +6,32 @@
 [core]
 	autocrlf = input
 	editor = vim
-	ignorecase = false
+    ignorecase = false
+    pager = delta
 [rebase]
     autostash = true
+[fetch]
+    prune = true
 [pull]
+    ff = only
+    default = current
     rebase = true
+[stash]
+    showPatch = true
+[log]
+    date = human
+[delta]
+    navigate = true
+    light = false
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
 [alias]
+    d = diff
+    ds = diff --staged
+    amend = commit --amend --no-edit
+    plz = push --force-with-lease
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     yday = !sh -c 'git shortlog --since=yesterday --author=rsk@revathskumar.com --no-merges'
     promote = !$DOTFILES/bin/git-promote
@@ -22,8 +42,6 @@
     ignored = !git ls-files -v | grep "^[[:lower:]]"
     pr = !hub pull-request -b master -h `git rev-parse --abbrev-ref HEAD`
     hpr = !hub pull-request -b production-release-v1 -h `git rev-parse --abbrev-ref HEAD`
-[pulley]
-	token = f57387775e007375b7fc6d36da7b3b7f13eb7c5c
 [help]
   autocorrect = 1
 [url "https://"]
