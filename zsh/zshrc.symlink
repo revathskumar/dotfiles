@@ -136,6 +136,7 @@ export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 # to sytax highlight man pages depends on bat
 # moreinfo: https://github.com/sharkdp/bat#man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export HUSKY=0
 
 PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
@@ -176,9 +177,13 @@ source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
 # added by travis gem
 [ ! -s $HOME/.travis/travis.sh ] || source $HOME/.travis/travis.sh
 
-test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh)
+#test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh)
 
 # from /opt/homebrew/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f "/Users/revath.kumar/.ghcup/env" ] && source "/Users/revath.kumar/.ghcup/env" # ghcup-env
+source "$HOME/.cargo/env"
+
+# bun completions
+[ -s "/Users/revath.kumar/.bun/_bun" ] && source "/Users/revath.kumar/.bun/_bun"
