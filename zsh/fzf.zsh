@@ -83,8 +83,10 @@ _fzf_complete_npm_run() {
         return
     fi
 
-    _fzf_complete  --prompt="npm run> " -- "$@" < <(
-      cat package.json | jq -r '.scripts | keys[]'
+    local scriptContent=$(cat package.json | jq -r '.scripts')
+
+    _fzf_complete  --prompt="npm run> " --preview="echo '$scriptContent' | jq -r '.{}' "  -- "$@" < <(
+      echo $scriptContent | jq -r 'keys[]'
     )
 }
 
