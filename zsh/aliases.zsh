@@ -25,3 +25,4 @@ alias ccp="xclip -sel clip"
 alias t="~/bin/todo/todo.sh"
 alias lg=lazygit
 alias ls=lsd
+alias awsl='aws --endpoint-url=http://localhost:4566 --profile localstack'
