@@ -58,6 +58,17 @@ _fzf_complete_pass() {
 
 #endregion
 
+#region podman fzf completion
+
+_fzf_complete_podman() {
+  _fzf_complete --prompt="container> " --preview 'podman container inspect {}' -- "$@" < <(
+    command podman container ls --noheading --format "{{.ID}}"
+  )
+}
+
+#endregion
+
+
 #region npm fzf completion
 
 _fzf_complete_npm() {
