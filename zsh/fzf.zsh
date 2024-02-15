@@ -68,6 +68,19 @@ _fzf_complete_podman() {
 
 #endregion
 
+#region curl fzf completion
+
+_fzf_complete_curl() {
+  _fzf_complete --header-lines=1  --prompt="curl> " -- "$@" < <(
+    curl -h all
+  )
+}
+
+_fzf_complete_curl_post() {
+  awk '{print $1}' | cut -d ',' -f -1
+}
+
+#endregion
 
 #region npm fzf completion
 
