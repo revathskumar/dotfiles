@@ -75,3 +75,12 @@ gpr(){
 gld(){
   git log --after="$1 00:00" --before="$1 23:59" $2
 }
+
+gopen(){
+  url=$(git remote get-url --push origin | sed 's/\:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//');
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    open -u $url;
+  else
+    xdg-open $url;
+  fi
+}
