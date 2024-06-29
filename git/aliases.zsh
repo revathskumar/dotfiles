@@ -44,7 +44,7 @@ alias gb='git branch | cut -c 3- | fzf --multi --preview="git log {} --"'
 alias gbr='git branch -rl "origin/*" | cut -c 10- | fzf | xargs git checkout'
 alias gbc='git branch | cut -c 3- | fzf --preview="git log {} --" | xargs git checkout'
 #compdef _git gdv=git-branch
-#compdef _git gco=git-branch
+compdef _git gco=git-branch
 
 alias gst='git status'
 alias ga='git add'
